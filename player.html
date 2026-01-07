@@ -119,69 +119,64 @@
   Kick Off Scholars © 2026
 </footer>
 
-<script src="players.js"></script>
 <script>
   const playerId = Number(localStorage.getItem("selectedPlayerId"));
-  const players = JSON.parse(localStorage.getItem("players"));
+  const playersRaw = localStorage.getItem("players");
 
-  const player = players.find(p => p.id === playerId);
+  console.log("Selected Player ID:", playerId);
+  console.log("Players raw:", playersRaw);
 
-  if (!player) {
+  if (!playersRaw) {
     document.querySelector(".profile-card").innerHTML =
-      "<h2 style='text-align:center'>Player not found</h2>";
+      "<h2 style='text-align:center'>No players data found</h2>";
   } else {
-    document.querySelector("header h1").innerText = player.name;
-    document.querySelector("header p").innerText =
-      `${player.gender === "women" ? "Women Soccer" : "Men Soccer"} · ${player.position} · ${player.status}`;
+    const players = JSON.parse(playersRaw);
+    const player = players.find(p => Number(p.id) === playerId);
 
-    document.querySelector(".profile-card").innerHTML = `
-      <div class="section">
-        <h2>Player Information</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>Age</strong>${player.age}</div>
-          <div class="info-box"><strong>Nationality</strong>${player.nationality}</div>
-          <div class="info-box"><strong>Height</strong>${player.height}</div>
-          <div class="info-box"><strong>Weight</strong>${player.weight}</div>
-          <div class="info-box"><strong>Position</strong>${player.position}</div>
-          <div class="info-box"><strong>Status</strong>${player.status}</div>
+    if (!player) {
+      document.querySelector(".profile-card").innerHTML =
+        "<h2 style='text-align:center'>Player not found</h2>";
+    } else {
+      document.querySelector("header h1").innerText = player.name;
+      document.querySelector("header p").innerText =
+        `${player.gender === "women" ? "Women Soccer" : "Men Soccer"} · ${player.position} · ${player.status}`;
+
+      document.querySelector(".profile-card").innerHTML = `
+        <div class="section">
+          <h2>Player Information</h2>
+          <div class="info-grid">
+            <div class="info-box"><strong>Age:</strong> ${player.age}</div>
+            <div class="info-box"><strong>Nationality:</strong> ${player.nationality}</div>
+            <div class="info-box"><strong>College:</strong> ${player.college}</div>
+            <div class="info-box"><strong>Height:</strong> ${player.height}</div>
+            <div class="info-box"><strong>Position:</strong> ${player.position}</div>
+            <div class="info-box"><strong>Status:</strong> ${player.status}</div>
+          </div>
         </div>
-      </div>
 
-      <div class="section">
-        <h2>Academic Profile</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>Student Type</strong>${player.type}</div>
-          <div class="info-box"><strong>GPA</strong>${player.gpa}</div>
+        <div class="section">
+          <h2>Academic Profile</h2>
+          <div class="info-grid">
+            <div class="info-box"><strong>Student Type:</strong> ${player.type}</div>
+            <div class="info-box"><strong>GPA:</strong> ${player.gpa}</div>
+          </div>
         </div>
-      </div>
 
-      <div class="section">
-        <h2>Special Mentions</h2>
-        <div class="highlight-box">${player.mentions}</div>
-      </div>
-
-      <div class="section">
-        <h2>Performance Metrics</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>5m Sprint</strong>${player.sprint5}</div>
-          <div class="info-box"><strong>10m Sprint</strong>${player.sprint10}</div>
+        <div class="section">
+          <h2>Highlights Video</h2>
+          <div class="video-container">
+            <iframe src="${player.video}" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
-      </div>
 
-      <div class="section">
-        <h2>Highlights Video</h2>
-        <div class="video-container">
-          <iframe src="${player.video}" frameborder="0" allowfullscreen></iframe>
+        <div class="section" style="text-align:center;">
+          <a href="mailto:kickoffscholars@gmail.com?subject=Interest in ${player.name}"
+             class="action-btn">
+             I'm interested in this player
+          </a>
         </div>
-      </div>
-
-      <div class="section" style="text-align:center;">
-        <a href="mailto:kickoffscholars@gmail.com?subject=Interest in ${player.name}"
-           class="action-btn">
-           I'm interested in this player
-        </a>
-      </div>
-    `;
+      `;
+    }
   }
 </script>
 
