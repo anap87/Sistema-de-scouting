@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men Soccer Prospects | Kick Off Scholars</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Aileron&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Aileron', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.85;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    thead {
+      background: #203a43;
+      color: white;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    th {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    tr:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+
+    .status {
+      font-weight: 600;
+    }
+
+    .available {
+      color: #2e7d32;
+    }
+
+    .committed {
+      color: #c62828;
+    }
+
+    .view-btn {
+      background: #203a43;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .view-btn:hover {
+      background: #0f2027;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Men Soccer Players</h1>
+    <p>Available & Committed Prospects · Kick Off Scholars</p>
+  </header>
+
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Status</th>
+          <th>Profile</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>Lucas Fernández</td>
+          <td>Center Back</td>
+          <td class="status available">Available</td>
+          <td>
+            <button class="view-btn" onclick="location.href='player.html'">
+              View Profile
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Andrés Molina</td>
+          <td>Forward</td>
+          <td class="status committed">Committed</td>
+          <td>
+            <button class="view-btn" onclick="location.href='player.html'">
+              View Profile
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Diego Ríos</td>
+          <td>Defensive Midfielder</td>
+          <td class="status available">Available</td>
+          <td>
+            <button class="view-btn" onclick="location.href='player.html'">
+              View Profile
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    Kick Off Scholars © 2026
+  </footer>
+
+</body>
+</html>
 
