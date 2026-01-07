@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Player Profile | Kick Off Scholars</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Aileron&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Aileron', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.85;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: -40px auto 60px;
+      padding: 0 20px;
+    }
+
+    .profile-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .section {
+      margin-bottom: 35px;
+    }
+
+    .section h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #243b55;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .info-box {
+      background: #f1f4f8;
+      padding: 15px 18px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: #eef2f7;
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 15px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .action-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #243b55;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .action-btn:hover {
+      background: #141e30;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>María López</h1>
+    <p>Women Soccer · Midfielder · Available</p>
+  </header>
+
+  <div class="container">
+    <div class="profile-card">
+
+      <!-- BASIC INFO -->
+      <div class="section">
+        <h2>Player Information</h2>
+        <div class="info-grid">
+          <div class="info-box"><strong>Age</strong>18</div>
+          <div class="info-box"><strong>Nationality</strong>Ecuador</div>
+          <div class="info-box"><strong>Height</strong>165 cm</div>
+          <div class="info-box"><strong>Weight</strong>58 kg</div>
+          <div class="info-box"><strong>Position</strong>Midfielder</div>
+          <div class="info-box"><strong>Status</strong>Available</div>
+        </div>
+      </div>
+
+      <!-- ACADEMIC INFO -->
+      <div class="section">
+        <h2>Academic Profile</h2>
+        <div class="info-grid">
+          <div class="info-box"><strong>Student Type</strong>Freshman</div>
+          <div class="info-box"><strong>GPA</strong>3.8</div>
+        </div>
+      </div>
+
+      <!-- SPECIAL MENTIONS -->
+      <div class="section">
+        <h2>Special Mentions</h2>
+        <div class="highlight-box">
+          Team captain · National tournament finalist · High work rate · Leadership
+        </div>
+      </div>
+
+      <!-- SPEED / METRICS -->
+      <div class="section">
+        <h2>Performance Metrics</h2>
+        <div class="info-grid">
+          <div class="info-box"><strong>5m Sprint</strong>1.05 s</div>
+          <div class="info-box"><strong>10m Sprint</strong>1.85 s</div>
+        </div>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="section">
+        <h2>Highlights Video</h2>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- ACTION -->
+      <div class="section" style="text-align:center;">
+        <a 
+          href="mailto:kickoffscholars@gmail.com?subject=Interest in María López"
+          class="action-btn">
+          Contact Kick Off Scholars
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    Kick Off Scholars © 2026
+  </footer>
+
+</body>
+</html>
 
