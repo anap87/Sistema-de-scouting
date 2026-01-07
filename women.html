@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women Soccer Prospects | Kick Off Scholars</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Aileron&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Aileron', sans-serif;
+      background: #f5f6fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #203a43, #2c5364);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.85;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    thead {
+      background: #203a43;
+      color: white;
+    }
+
+    th, td {
+      padding: 18px;
+      text-align: left;
+    }
+
+    th {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #eee;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: #f0f4f8;
+    }
+
+    .status {
+      font-weight: 600;
+    }
+
+    .available {
+      color: #2ecc71;
+    }
+
+    .committed {
+      color: #e67e22;
+    }
+
+    .view-btn {
+      background: #203a43;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .view-btn:hover {
+      background: #2c5364;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Women Soccer Players</h1>
+    <p>Available & Committed Prospects</p>
+  </header>
+
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Status</th>
+          <th>Profile</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>María López</td>
+          <td>Midfielder</td>
+          <td class="status available">Available</td>
+          <td>
+            <button class="view-btn" onclick="location.href='player.html'">
+              View Profile
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Sofía Ramírez</td>
+          <td>Defender</td>
+          <td class="status committed">Committed</td>
+          <td>
+            <button class="view-btn" onclick="location.href='player.html'">
+              View Profile
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Valentina Cruz</td>
+          <td>Forward</td>
+          <td class="status available">Available</td>
+          <td>
+            <button class="view-btn" onclick="location.href='player.html'">
+              View Profile
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    Kick Off Scholars © 2026
+  </footer>
+
+</body>
+</html>
 
