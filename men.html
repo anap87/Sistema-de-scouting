@@ -102,12 +102,6 @@
       font-size: 14px;
       opacity: 0.6;
     }
-
-    @media (max-width: 768px) {
-      table {
-        font-size: 14px;
-      }
-    }
   </style>
 </head>
 
@@ -135,7 +129,7 @@
           <td>Center Back</td>
           <td class="status available">Available</td>
           <td>
-            <button class="view-btn" onclick="location.href='player.html'">
+            <button class="view-btn" onclick="viewPlayer(2)">
               View Profile
             </button>
           </td>
@@ -146,7 +140,7 @@
           <td>Forward</td>
           <td class="status committed">Committed</td>
           <td>
-            <button class="view-btn" onclick="location.href='player.html'">
+            <button class="view-btn" onclick="viewPlayer(3)">
               View Profile
             </button>
           </td>
@@ -157,7 +151,7 @@
           <td>Defensive Midfielder</td>
           <td class="status available">Available</td>
           <td>
-            <button class="view-btn" onclick="location.href='player.html'">
+            <button class="view-btn" onclick="viewPlayer(4)">
               View Profile
             </button>
           </td>
@@ -171,6 +165,16 @@
     Kick Off Scholars © 2026
   </footer>
 
+  <!-- SCRIPTS -->
+  <script src="players.js"></script>
+  <script>
+    function viewPlayer(id) {
+      localStorage.setItem("selectedPlayerId", id);
+      window.location.href = "player.html";
+    }
+  </script>
+
 </body>
 </html>
+
 
