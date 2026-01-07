@@ -1,5 +1,5 @@
 const players = [
-  // ===== WOMEN =====
+  // WOMEN
   {
     id: 1,
     gender: "women",
@@ -18,43 +18,43 @@ const players = [
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
-    id: 2,
+    id: 3,
     gender: "women",
     name: "Sofía Andrade",
-    position: "Winger",
-    age: 17,
-    nationality: "Colombia",
-    height: "160 cm",
-    weight: "55 kg",
-    status: "Available",
-    type: "Junior",
-    gpa: "3.7",
-    mentions: "Explosive speed · One-on-one specialist",
-    sprint5: "1.02 s",
-    sprint10: "1.80 s",
+    position: "Center Back",
+    age: 19,
+    nationality: "Ecuador",
+    height: "172 cm",
+    weight: "64 kg",
+    status: "Committed",
+    type: "Transfer",
+    gpa: "3.6",
+    mentions: "Defensive leader · NJCAA experience",
+    sprint5: "1.08 s",
+    sprint10: "1.90 s",
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
-    id: 3,
+    id: 5,
     gender: "women",
     name: "Valentina Ruiz",
-    position: "Goalkeeper",
-    age: 18,
-    nationality: "Chile",
-    height: "170 cm",
-    weight: "62 kg",
+    position: "Forward",
+    age: 17,
+    nationality: "Colombia",
+    height: "163 cm",
+    weight: "56 kg",
     status: "Available",
     type: "Freshman",
     gpa: "3.9",
-    mentions: "Quick reflexes · Shot stopper",
-    sprint5: "1.10 s",
-    sprint10: "1.95 s",
+    mentions: "Top scorer · Explosive speed",
+    sprint5: "0.98 s",
+    sprint10: "1.72 s",
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
 
-  // ===== MEN =====
+  // MEN
   {
-    id: 4,
+    id: 2,
     gender: "men",
     name: "Lucas Fernández",
     position: "Center Back",
@@ -71,55 +71,39 @@ const players = [
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
-    id: 5,
+    id: 4,
     gender: "men",
     name: "Andrés Molina",
-    position: "Attacking Midfielder",
-    age: 18,
-    nationality: "Mexico",
-    height: "175 cm",
-    weight: "68 kg",
-    status: "Available",
-    type: "Freshman",
-    gpa: "3.5",
-    mentions: "Playmaker · Vision · Through balls",
-    sprint5: "1.03 s",
-    sprint10: "1.82 s",
+    position: "Forward",
+    age: 20,
+    nationality: "Colombia",
+    height: "178 cm",
+    weight: "72 kg",
+    status: "Committed",
+    type: "Transfer",
+    gpa: "3.4",
+    mentions: "Clinical finisher · College experience",
+    sprint5: "0.97 s",
+    sprint10: "1.70 s",
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: 6,
     gender: "men",
     name: "Diego Ríos",
-    position: "Striker",
-    age: 19,
-    nationality: "Uruguay",
-    height: "178 cm",
-    weight: "72 kg",
+    position: "Defensive Midfielder",
+    age: 21,
+    nationality: "Chile",
+    height: "180 cm",
+    weight: "74 kg",
     status: "Available",
-    type: "Sophomore",
-    gpa: "3.4",
-    mentions: "Clinical finisher · High pressing",
-    sprint5: "0.98 s",
-    sprint10: "1.75 s",
+    type: "Transfer",
+    gpa: "3.5",
+    mentions: "High work rate · Tactical intelligence",
+    sprint5: "1.02 s",
+    sprint10: "1.82 s",
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   }
 ];
 
-/* ===============================
-   GUARDAR JUGADORES UNA SOLA VEZ
-================================ */
-
-if (!localStorage.getItem("players")) {
-  localStorage.setItem("players", JSON.stringify(players));
-}
-
-/* ===============================
-   FUNCIÓN PARA ABRIR PERFIL
-   (USADA EN MEN Y WOMEN)
-================================ */
-
-function openPlayer(playerId) {
-  localStorage.setItem("selectedPlayerId", playerId);
-  window.location.href = "player.html";
-}
+localStorage.setItem("players", JSON.stringify(players));
