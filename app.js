@@ -106,4 +106,8 @@ const players = [
   }
 ];
 
-localStorage.setItem("players", JSON.stringify(players));
+// Guardar SOLO si no existe
+if (!localStorage.getItem("players")) {
+  localStorage.setItem("players", JSON.stringify(players));
+}
+
