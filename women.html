@@ -12,20 +12,20 @@
     body {
       margin: 0;
       font-family: 'Aileron', sans-serif;
-      background: #f5f6fa;
+      background: #f4f6f9;
       color: #333;
     }
 
     header {
-      background: linear-gradient(135deg, #203a43, #2c5364);
+      background: linear-gradient(135deg, #4b134f, #c94b4b);
       color: white;
-      padding: 40px;
+      padding: 50px 20px;
       text-align: center;
     }
 
     header h1 {
       font-family: 'League Spartan', sans-serif;
-      font-size: 42px;
+      font-size: 40px;
       margin-bottom: 10px;
     }
 
@@ -35,7 +35,7 @@
 
     .container {
       max-width: 1100px;
-      margin: 50px auto;
+      margin: 40px auto;
       padding: 0 20px;
     }
 
@@ -45,35 +45,28 @@
       background: white;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     }
 
     thead {
-      background: #203a43;
+      background: #4b134f;
       color: white;
     }
 
     th, td {
-      padding: 18px;
+      padding: 16px;
       text-align: left;
+      font-size: 15px;
     }
 
     th {
       font-family: 'League Spartan', sans-serif;
-      font-size: 15px;
+      font-weight: 600;
       letter-spacing: 0.5px;
     }
 
-    tbody tr {
+    tr:not(:last-child) {
       border-bottom: 1px solid #eee;
-    }
-
-    tbody tr:last-child {
-      border-bottom: none;
-    }
-
-    tbody tr:hover {
-      background: #f0f4f8;
     }
 
     .status {
@@ -81,18 +74,18 @@
     }
 
     .available {
-      color: #2ecc71;
+      color: #2e7d32;
     }
 
     .committed {
-      color: #e67e22;
+      color: #c62828;
     }
 
     .view-btn {
-      background: #203a43;
+      background: #4b134f;
       color: white;
       border: none;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: 20px;
       cursor: pointer;
       font-size: 14px;
@@ -100,7 +93,7 @@
     }
 
     .view-btn:hover {
-      background: #2c5364;
+      background: #2f0b33;
     }
 
     footer {
@@ -122,7 +115,7 @@
 
   <header>
     <h1>Women Soccer Players</h1>
-    <p>Available & Committed Prospects</p>
+    <p>Available & Committed Prospects · Kick Off Scholars</p>
   </header>
 
   <div class="container">
@@ -135,8 +128,8 @@
           <th>Profile</th>
         </tr>
       </thead>
-
       <tbody>
+
         <tr>
           <td>María López</td>
           <td>Midfielder</td>
@@ -149,8 +142,8 @@
         </tr>
 
         <tr>
-          <td>Sofía Ramírez</td>
-          <td>Defender</td>
+          <td>Sofía Andrade</td>
+          <td>Center Back</td>
           <td class="status committed">Committed</td>
           <td>
             <button class="view-btn" onclick="location.href='player.html'">
@@ -160,7 +153,7 @@
         </tr>
 
         <tr>
-          <td>Valentina Cruz</td>
+          <td>Valentina Ruiz</td>
           <td>Forward</td>
           <td class="status available">Available</td>
           <td>
@@ -169,6 +162,7 @@
             </button>
           </td>
         </tr>
+
       </tbody>
     </table>
   </div>
@@ -179,4 +173,3 @@
 
 </body>
 </html>
-
