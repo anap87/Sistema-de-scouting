@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Player Profile | Kick Off Scholars</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Aileron&display=swap" rel="stylesheet">
 
   <style>
@@ -27,10 +26,6 @@
       font-family: 'League Spartan', sans-serif;
       font-size: 42px;
       margin-bottom: 10px;
-    }
-
-    header p {
-      opacity: 0.85;
     }
 
     .container {
@@ -67,20 +62,12 @@
       background: #f1f4f8;
       padding: 15px 18px;
       border-radius: 12px;
-      font-size: 15px;
-    }
-
-    .info-box strong {
-      display: block;
-      margin-bottom: 4px;
-      font-weight: 600;
     }
 
     .highlight-box {
       background: #eef2f7;
       padding: 20px;
       border-radius: 15px;
-      font-size: 15px;
     }
 
     .video-container {
@@ -107,239 +94,94 @@
       padding: 14px 28px;
       border-radius: 30px;
       text-decoration: none;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    .action-btn:hover {
-      background: #141e30;
     }
 
     footer {
       text-align: center;
       margin: 40px 0;
-      font-size: 14px;
       opacity: 0.6;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 32px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>María López</h1>
-    <p>Women Soccer · Midfielder · Available</p>
-  </header>
+<header>
+  <h1 id="playerName"></h1>
+  <p id="playerSubtitle"></p>
+</header>
 
-  <div class="container">
-    <div class="profile-card">
+<div class="container">
+  <div class="profile-card" id="profileCard"></div>
+</div>
 
-      <!-- BASIC INFO -->
-      <div class="section">
-        <h2>Player Information</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>Age</strong>18</div>
-          <div class="info-box"><strong>Nationality</strong>Ecuador</div>
-          <div class="info-box"><strong>Height</strong>165 cm</div>
-          <div class="info-box"><strong>Weight</strong>58 kg</div>
-          <div class="info-box"><strong>Position</strong>Midfielder</div>
-          <div class="info-box"><strong>Status</strong>Available</div>
-        </div>
-      </div>
-
-      <!-- ACADEMIC INFO -->
-      <div class="section">
-        <h2>Academic Profile</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>Student Type</strong>Freshman</div>
-          <div class="info-box"><strong>GPA</strong>3.8</div>
-        </div>
-      </div>
-
-      <!-- SPECIAL MENTIONS -->
-      <div class="section">
-        <h2>Special Mentions</h2>
-        <div class="highlight-box">
-          Team captain · National tournament finalist · High work rate · Leadership
-        </div>
-      </div>
-
-      <!-- SPEED / METRICS -->
-      <div class="section">
-        <h2>Performance Metrics</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>5m Sprint</strong>1.05 s</div>
-          <div class="info-box"><strong>10m Sprint</strong>1.85 s</div>
-        </div>
-      </div>
-
-      <!-- VIDEO -->
-      <div class="section">
-        <h2>Highlights Video</h2>
-        <div class="video-container">
-          <iframe 
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-
-      <!-- ACTION -->
-      <div class="section" style="text-align:center;">
-        <a 
-          href="mailto:kickoffscholars@gmail.com?subject=Interest in María López"
-          class="action-btn">
-          Contact Kick Off Scholars
-        </a>
-      </div>
-
-    </div>
-  </div>
-
-  <footer>
-    Kick Off Scholars © 2026
-  </footer>
+<footer>
+  Kick Off Scholars © 2026
+</footer>
 
 <script src="players.js"></script>
 <script>
   const playerId = parseInt(localStorage.getItem("selectedPlayerId"));
   const players = JSON.parse(localStorage.getItem("players"));
-
   const player = players.find(p => p.id === playerId);
 
-  if (player) {
-    document.querySelector("header h1").innerText = player.name;
-    document.querySelector("header p").innerText =
-      `${player.gender === "women" ? "Women Soccer" : "Men Soccer"} · ${player.position} · ${player.status}`;
-
-    document.querySelector(".profile-card").innerHTML = `
-      <div class="section">
-        <h2>Player Information</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>Age</strong>${player.age}</div>
-          <div class="info-box"><strong>Nationality</strong>${player.nationality}</div>
-          <div class="info-box"><strong>Height</strong>${player.height}</div>
-          <div class="info-box"><strong>Weight</strong>${player.weight}</div>
-          <div class="info-box"><strong>Position</strong>${player.position}</div>
-          <div class="info-box"><strong>Status</strong>${player.status}</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>Academic Profile</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>Student Type</strong>${player.type}</div>
-          <div class="info-box"><strong>GPA</strong>${player.gpa}</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>Special Mentions</h2>
-        <div class="highlight-box">${player.mentions}</div>
-      </div>
-
-      <div class="section">
-        <h2>Performance Metrics</h2>
-        <div class="info-grid">
-          <div class="info-box"><strong>5m Sprint</strong>${player.sprint5}</div>
-          <div class="info-box"><strong>10m Sprint</strong>${player.sprint10}</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>Highlights Video</h2>
-        <div class="video-container">
-          <iframe src="${player.video}" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div class="section" style="text-align:center;">
-        <a href="mailto:kickoffscholars@gmail.com?subject=Interest in ${player.name}"
-           class="action-btn">
-           Contact Kick Off Scholars
-        </a>
-      </div>
-    `;
+  if (!player) {
+    document.body.innerHTML = "<h2 style='text-align:center;'>Player not found</h2>";
   }
+
+  document.getElementById("playerName").innerText = player.name;
+  document.getElementById("playerSubtitle").innerText =
+    `${player.gender === "women" ? "Women Soccer" : "Men Soccer"} · ${player.position} · ${player.status}`;
+
+  document.getElementById("profileCard").innerHTML = `
+    <div class="section">
+      <h2>Player Information</h2>
+      <div class="info-grid">
+        <div class="info-box"><strong>Age</strong>${player.age}</div>
+        <div class="info-box"><strong>Nationality</strong>${player.nationality}</div>
+        <div class="info-box"><strong>Height</strong>${player.height}</div>
+        <div class="info-box"><strong>Weight</strong>${player.weight}</div>
+        <div class="info-box"><strong>Status</strong>${player.status}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Academic Profile</h2>
+      <div class="info-grid">
+        <div class="info-box"><strong>Type</strong>${player.type}</div>
+        <div class="info-box"><strong>GPA</strong>${player.gpa}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Special Mentions</h2>
+      <div class="highlight-box">${player.mentions}</div>
+    </div>
+
+    <div class="section">
+      <h2>Performance Metrics</h2>
+      <div class="info-grid">
+        <div class="info-box"><strong>5m Sprint</strong>${player.sprint5}</div>
+        <div class="info-box"><strong>10m Sprint</strong>${player.sprint10}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Highlights Video</h2>
+      <div class="video-container">
+        <iframe src="${player.video}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="section" style="text-align:center;">
+      <a href="mailto:kickoffscholars@gmail.com?subject=Interest in ${player.name}" class="action-btn">
+        Contact Kick Off Scholars
+      </a>
+    </div>
+  `;
 </script>
 
-<script>
-const players = {
-  // MEN
-  lucas: {
-    name: "Lucas Fernández",
-    gender: "Men",
-    position: "Center Back",
-    age: 19,
-    nationality: "Argentina",
-    height: "1.85 m",
-    weight: "78 kg",
-    type: "Freshman",
-    gpa: "3.6",
-    highlights: "https://www.youtube.com/embed/XXXX"
-  },
-  andres: {
-    name: "Andrés Molina",
-    gender: "Men",
-    position: "Forward",
-    age: 20,
-    nationality: "Colombia",
-    height: "1.78 m",
-    weight: "72 kg",
-    type: "Transfer",
-    college: "Iowa Lakes CC",
-    division: "NJCAA",
-    gpa: "3.4",
-    highlights: "https://www.youtube.com/embed/YYYY"
-  },
-
-  // WOMEN
-  maria: {
-    name: "María López",
-    gender: "Women",
-    position: "Midfielder",
-    age: 18,
-    nationality: "Spain",
-    height: "1.68 m",
-    weight: "60 kg",
-    type: "Freshman",
-    gpa: "3.9",
-    highlights: "https://www.youtube.com/embed/ZZZZ"
-  }
-};
-
-// Obtener parámetro
-const params = new URLSearchParams(window.location.search);
-const playerId = params.get("player");
-
-const player = players[playerId];
-
-if (!player) {
-  document.body.innerHTML = "<h2>Player not found</h2>";
-}
-
-// AQUÍ SOLO CAMBIAS IDS SEGÚN TU HTML
-document.getElementById("playerName").textContent = player.name;
-document.getElementById("playerPosition").textContent = player.position;
-document.getElementById("playerAge").textContent = player.age;
-document.getElementById("playerNationality").textContent = player.nationality;
-document.getElementById("playerHeight").textContent = player.height;
-document.getElementById("playerWeight").textContent = player.weight;
-document.getElementById("playerGpa").textContent = player.gpa;
-
-if (player.highlights) {
-  document.getElementById("playerVideo").src = player.highlights;
-}
-</script>
-
-  
 </body>
 </html>
+
 
