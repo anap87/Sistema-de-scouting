@@ -270,6 +270,75 @@
   }
 </script>
 
+<script>
+const players = {
+  // MEN
+  lucas: {
+    name: "Lucas Fernández",
+    gender: "Men",
+    position: "Center Back",
+    age: 19,
+    nationality: "Argentina",
+    height: "1.85 m",
+    weight: "78 kg",
+    type: "Freshman",
+    gpa: "3.6",
+    highlights: "https://www.youtube.com/embed/XXXX"
+  },
+  andres: {
+    name: "Andrés Molina",
+    gender: "Men",
+    position: "Forward",
+    age: 20,
+    nationality: "Colombia",
+    height: "1.78 m",
+    weight: "72 kg",
+    type: "Transfer",
+    college: "Iowa Lakes CC",
+    division: "NJCAA",
+    gpa: "3.4",
+    highlights: "https://www.youtube.com/embed/YYYY"
+  },
+
+  // WOMEN
+  maria: {
+    name: "María López",
+    gender: "Women",
+    position: "Midfielder",
+    age: 18,
+    nationality: "Spain",
+    height: "1.68 m",
+    weight: "60 kg",
+    type: "Freshman",
+    gpa: "3.9",
+    highlights: "https://www.youtube.com/embed/ZZZZ"
+  }
+};
+
+// Obtener parámetro
+const params = new URLSearchParams(window.location.search);
+const playerId = params.get("player");
+
+const player = players[playerId];
+
+if (!player) {
+  document.body.innerHTML = "<h2>Player not found</h2>";
+}
+
+// AQUÍ SOLO CAMBIAS IDS SEGÚN TU HTML
+document.getElementById("playerName").textContent = player.name;
+document.getElementById("playerPosition").textContent = player.position;
+document.getElementById("playerAge").textContent = player.age;
+document.getElementById("playerNationality").textContent = player.nationality;
+document.getElementById("playerHeight").textContent = player.height;
+document.getElementById("playerWeight").textContent = player.weight;
+document.getElementById("playerGpa").textContent = player.gpa;
+
+if (player.highlights) {
+  document.getElementById("playerVideo").src = player.highlights;
+}
+</script>
+
   
 </body>
 </html>
