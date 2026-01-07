@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kick Off Scholars</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Aileron&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Aileron', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 64px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 50px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 18px 40px;
+      font-size: 18px;
+      font-family: 'League Spartan', sans-serif;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 200px;
+    }
+
+    .btn-admin {
+      background-color: #ad2521;
+      color: white;
+    }
+
+    .btn-admin:hover {
+      background-color: #8f1e1a;
+      transform: translateY(-3px);
+    }
+
+    .btn-coach {
+      background-color: white;
+      color: #203a43;
+    }
+
+    .btn-coach:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 44px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Kick Off Scholars</h1>
+    <p>Connecting talented soccer players with college opportunities in the U.S.</p>
+
+    <div class="buttons">
+      <button class="btn btn-admin" onclick="location.href='admin.html'">
+        Admin
+      </button>
+
+      <button class="btn btn-coach" onclick="location.href='coach.html'">
+        Coach
+      </button>
+    </div>
+
+    <footer>
+      © 2026 Kick Off Scholars. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
 
